@@ -23,6 +23,10 @@
     color-theme-ld-dark
     color-theme-sanityinc-tomorrow-blue
     color-theme-deep-blue
+    csharp-mode
+    d-mode
+    flymake
+    helm
     ))
 
 (let ((not-installed (loop for x in installing-package-list
