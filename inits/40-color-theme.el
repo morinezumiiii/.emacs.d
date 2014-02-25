@@ -1,0 +1,6 @@
+(require 'color-theme)
+(color-theme-initialize)
+;(color-theme-solarized-dark)
+(color-theme-ld-dark)
+;(color-theme-sanityinc-tomorrow-blue)
+;(color-theme-deep-blue)

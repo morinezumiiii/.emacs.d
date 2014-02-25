@@ -1,0 +1,6 @@
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
+(setq markdown-command "/usr/local/bin/markdown")
+; Markdown2HTML(C-c C-c v, C-c C-c e)
+;(setq markdown-css-path "file://~/.emacs.d/path/to/hoge.css")
