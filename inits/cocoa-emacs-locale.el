@@ -2,7 +2,7 @@
 (require 'ucs-normalize)
 (prefer-coding-system 'utf-8-hfs)
 (set-default-coding-systems 'utf-8-hfs)
-(setq file-name-coding-system 'utf-hfs)
+(setq file-name-coding-system 'utf-8-hfs)
 (setq locale-coding-system 'utf-8-hfs)
 
 (defun ucs-normalize-NFC-buffer ()

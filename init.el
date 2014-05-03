@@ -24,6 +24,7 @@
     js2-mode
     markdown-mode
     multi-web-mode
+    arduino-mode
     magit
     multi-term
     nodejs-repl
@@ -37,6 +38,7 @@
     d-mode
     flymake
     helm
+    migemo
     ))
 
 (let ((not-installed (loop for x in installing-package-list
