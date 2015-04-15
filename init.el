@@ -1,8 +1,3 @@
-;; load path settings
-(setq load-path (append
-                 '("~/.emacs.d")
-                 load-path))
-
 ;; load path under the ~/.emacs.d/site-lisp
 (let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
   (add-to-list 'load-path default-directory)
@@ -17,28 +12,23 @@
 (require 'cl)
 (defvar installing-package-list
   '(
-    init-loader
-    revive
-    haskell-mode
-    google-c-style
-    js2-mode
-    markdown-mode
-    multi-web-mode
     arduino-mode
-    magit
-    multi-term
-    nodejs-repl
-    tabbar
-    direx
-    anything
+    auto-complete
+    csharp-mode
     color-theme
     color-theme-solarized
     color-theme-sanityinc-tomorrow
-    csharp-mode
-    d-mode
-    flymake
+    darcula-theme
+    flycheck
+    google-c-style
     helm
-    migemo
+    init-loader
+    jade-mode
+    js2-mode
+    magit
+    markdown-mode
+    multi-web-mode
+    tabbar
     ))
 
 (let ((not-installed (loop for x in installing-package-list
@@ -52,3 +42,18 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
+ '(custom-safe-themes
+   (quote
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

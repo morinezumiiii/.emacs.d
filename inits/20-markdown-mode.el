@@ -4,3 +4,8 @@
 (setq markdown-command "/usr/local/bin/markdown")
 ; Markdown2HTML(C-c C-c v, C-c C-c e)
 ;(setq markdown-css-path "file://~/.emacs.d/path/to/hoge.css")
+(defun markdown-custom ()
+  "markdown-mode-hook"
+  (setq markdown-command-needs-filename t)
+  )
+(add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))

@@ -1,6 +1,3 @@
-;; transparency
-(add-to-list 'default-frame-alist '(alpha . (0.85 0.85)))
-
 ;; show images
 (auto-image-file-mode t)
 
@@ -28,28 +25,68 @@
 (setq inhibit-startup-message t)
 (setq-default indent-tabs-mode nil)
 
+;; Color
+(if window-system (progn
+    (set-background-color "Black")
+    (set-foreground-color "LightGray")
+    (set-cursor-color "Gray")
+    (set-frame-parameter nil 'alpha 80) ;‘Í¸‘Ã÷‘¶È
+    ))
+
 ;; font settings
 ;; ABCDEFGHIJKLMNOP
 ;; abcdefghijklmnop
 ;; 0123456789012345
-;; ‚ ‚¢‚¤‚¦‚¨
-;(set-face-attribute 'default nil
-;                    :family "Migu 1M Regular"
-;                    :height 110)
-;(set-fontset-font
-; nil 'japanese-jisx0208
-; (font-spec :family "Migu 1M Regular"))
-;(setq face-font-rescale-alist
-;      '((".*Migu 1M Regular*." . 1.0)))
-(set-face-attribute 'default nil :family "Inconsolata" :height 115)
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0208
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0212
-                  (cons "Ricty Discord" "iso10646-1"))
-(set-fontset-font (frame-parameter nil 'font)
-                  'katakana-jisx0201
-                  (cons "Ricty Discord" "iso10646-1"))
-(setq face-font-rescase-alist
-      ((".*Ricty*.". 1.0)))
+;;  ‚¢¤‚¦¨
+;; Linux
+;; ‘Í¸‘Ã÷‘¤¢‘¤¢
+;(when (eq system-type 'gnu/linux)
+;  (mapc
+;   (lambda (face)
+;     (set-face-attribute face nil :family "VLGothic" :height 100 :width 100 :weight 'normal :underline nil))
+;   (face-list))
+
+;  (set-fontset-font (frame-parameter nil 'font)
+;                    'japanese-jisx0208
+;                    (font-spec :family "VLGothic"))
+;  (add-to-list 'face-font-rescale-alist
+;               '(".*VLGothic.*" . 1.2))
+;)
+
+;; @font
+;;‘¥Ç‘¥Õ‘¥©‘¥ë‘¥È‘¤Î‘¥Õ‘¥©‘¥ó‘¥È‘¤òInconsolata‘¤Ë‘¤¹‘¤ë
+;;Terminal‘¤Ç•âä‘¤¯ö¥Ü‘²ß‘¤â‘¤¹‘¤ë
+(when window-system
+  ;; ‘»­‘Ãæ‘¤Î‘¥Õ‘¥©‘¥ó‘¥È‘¤òInconsolata‘¤Ë
+  (set-face-attribute 'default nil
+                      :family "Inconsolata"
+                      :height 115)
+  (set-frame-font "Inconsolata")
+  ;;‘ÒÔ‘ÏÂ‘¤Ï‘È«‘¤Æ‘Õı‘³£‘¤Ë‘ÈÕ‘±¾•ë£‘±í‘Ê¾‘¤¹‘¤ë‘¤¿‘¤á‘¤Î•İÃ‘¶¨
+  (set-fontset-font
+   (frame-parameter nil 'font)
+   'japanese-jisx0208
+   '("VLGothic" . "iso10646-1"))
+  (set-fontset-font
+   (frame-parameter nil 'font)
+   'mule-unicode-0100-24ff
+   '("VLGothic" . "iso10646-1"))
+  ;; ‘°ë‘½Ç‘¥«‘¥¿‘¥«‘¥Ê‘¡¢‘È«‘½Ç‘¥¢‘¥ë‘¥Õ‘¥¡‘¥Ù‘¥Ã‘¥È‘¤Î•İÃ‘¶¨
+  (set-fontset-font nil
+                    '( #xff00 . #xffef)
+                    (font-spec :family "VLGothic")
+                    nil
+                    'prepend)
+  ;; •Ø´‘ºÅ‘¡¢‘È«‘½Ç‘¤Ò‘¤é‘¤¬‘¤Ê‘¡¢‘È«‘½Ç‘¥«‘¥¿‘¥«‘¥Ê‘¤Î•İÃ‘¶¨
+  (set-fontset-font nil
+                    '( #x3000 . #x30ff)
+                    (font-spec :family "VLGothic"
+                               nil
+                               'prepend))
+  ;; ‘¥Õ‘¥©‘¥ó‘¥È‘¤Î‘ºá‘·ù‘¤Î•îş‘Õû
+  (setq face-font-rescale-alist
+        '((".*Inconsolata.*" . 1.0)
+          (".*VLGothic.*" . 1.0)
+          (".*VLGothic.*" . 1.0)
+          ("-cdac$" . 1.3)))
+  )

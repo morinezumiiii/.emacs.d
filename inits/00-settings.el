@@ -21,10 +21,10 @@
 (setq next-line-add-newlines nil)
 
 ;; Skeleton library
-;(setq skeleton-pair t)
-;(global-set-key "(" 'skeleton-pair-insert-maybe)
-;(global-set-key "[" 'skeleton-pair-insert-maybe)
-;(global-set-key "{" 'skeleton-pair-insert-maybe)
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "{" 'skeleton-pair-insert-maybe)
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-window-plain)
