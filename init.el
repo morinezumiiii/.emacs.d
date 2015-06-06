@@ -14,21 +14,27 @@
   '(
     arduino-mode
     auto-complete
-    csharp-mode
     color-theme
     color-theme-solarized
     color-theme-sanityinc-tomorrow
+    csharp-mode
     darcula-theme
-    flycheck
+    eldoc
+    flymake
+    fuzzy
     google-c-style
     helm
     init-loader
-    jade-mode
     js2-mode
-    magit
+    json-mode
+    log4e
     markdown-mode
     multi-web-mode
-    tabbar
+    popup
+    psession
+    tss
+    typescript
+    yaxception
     ))
 
 (let ((not-installed (loop for x in installing-package-list
@@ -41,19 +47,4 @@
 
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
-(init-loader-load "~/.emacs.d/inits")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
- '(custom-safe-themes
-   (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(init-loader-load "~/.emacs.d/settings")

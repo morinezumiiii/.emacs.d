@@ -1,6 +1,10 @@
 *.el~
+ac-comphist.dat
 auto-save-list/
+elisp-objects/
 elpa/
 eshell/
 history
+places
+recentf
 url/
