@@ -1,3 +1,5 @@
+(setq default-tab-width 4)
+
 ;; backup file setting
 (setq backup-inhibited t)
 (setq delete-auto-save-files t)
@@ -21,10 +23,10 @@
 (setq next-line-add-newlines nil)
 
 ;; Skeleton library
-(setq skeleton-pair t)
-(global-set-key "(" 'skeleton-pair-insert-maybe)
-(global-set-key "[" 'skeleton-pair-insert-maybe)
-(global-set-key "{" 'skeleton-pair-insert-maybe)
+;(setq skeleton-pair t)
+;(global-set-key "(" 'skeleton-pair-insert-maybe)
+;(global-set-key "[" 'skeleton-pair-insert-maybe)
+;(global-set-key "{" 'skeleton-pair-insert-maybe)
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-window-plain)
@@ -35,8 +37,12 @@
 (setq read-file-name-completion-ignore-case t)
 
 ;; flex-autopair
-(require 'flex-autopair)
-(flex-autopair-mode 1)
+;(require 'flex-autopair)
+;(flex-autopair-mode 1)
+
+;; smartparens
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 ;; grep
 (require 'grep)

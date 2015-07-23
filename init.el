@@ -22,6 +22,17 @@
     eldoc
     flymake
     fuzzy
+    go-mode
+    go-autocomplete
+    go-direx
+    go-dlv
+    go-eldoc
+    go-errcheck
+    go-mode
+    go-play
+    go-projectile
+    go-snippets
+    go-stacktracer
     google-c-style
     helm
     init-loader
@@ -32,6 +43,7 @@
     multi-web-mode
     popup
     psession
+    smartparens
     tss
     typescript
     yaxception

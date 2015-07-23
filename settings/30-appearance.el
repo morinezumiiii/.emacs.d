@@ -2,7 +2,7 @@
 (require 'darcula-theme)
 
 ;; transparency
-(add-to-list 'default-frame-alist '(alpha . (0.95 0.95)))
+(add-to-list 'default-frame-alist '(alpha . (0.90 0.90)))
 
 ;; show images
 (auto-image-file-mode t)
@@ -36,7 +36,7 @@
 ;; abcdefghijklmnop
 ;; 0123456789012345
 ;; Å†Ç¢Å§Ç¶Å®
-(set-face-attribute 'default nil :family "Ricty" :height 120)
+(set-face-attribute 'default nil :family "Ricty" :height 110)
 (set-fontset-font (frame-parameter nil 'font)
                   'japanese-jisx0208
                   (font-spec :family "Ricty"))
