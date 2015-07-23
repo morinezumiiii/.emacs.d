@@ -1,9 +1,10 @@
 ;;
-;; Auto Complete
+;; auto-complete
 ;;
 (require 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
 (ac-config-default)
 (add-to-list 'ac-modes 'text-mode)
 (add-to-list 'ac-modes 'fundamental-mode)
@@ -12,6 +13,9 @@
 (ac-set-trigger-key "TAB")
 (setq ac-use-menu-map t)
 (setq ac-use-fuzzy t)
+(local-set-key (kbd "M-/") 'semantic-complete-analyze-inline)
+(local-set-key "." 'semantic-complete-self-insert)
+(local-set-key ">" 'semantic-complete-self-insert)
 
 ;;; helm
 ;; 標準を置き換え
@@ -83,12 +87,17 @@
 ;(tss-config-default)
 
 ;;
-;; go
+;; go-mode
 ;;
+(add-to-list 'exec-path (expand-file-name "~/gocode/bin"))
+(require 'go-autocomplete)
+(speedbar-add-supported-extension ".go")
 (autoload 'go-mode "go-mode" nil t)
 (eval-after-load "go-mode" '(progn (require 'go-autocomplete)))
 (add-hook 'go-mode-hook
           '(lambda()
+             (auto-complete-mode 1)
+             (setq ac-sources '(ac-source-go))
              (setq gofmt-command "goimports")
              (add-hook 'before-save-hook 'gofmt-before-save)
              (setq c-basic-offset 4)
