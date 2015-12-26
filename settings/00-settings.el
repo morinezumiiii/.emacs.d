@@ -1,5 +1,3 @@
-(setq default-tab-width 4)
-
 ;; backup file setting
 (setq backup-inhibited t)
 (setq delete-auto-save-files t)
@@ -11,7 +9,10 @@
 
 ;; executable
 (add-hook 'after-save-hook
-    'executable-make-buffer-file-executable-if-script-p)
+          'executable-make-buffer-file-executable-if-script-p)
+
+;; no beep
+(setq ring-bell-function 'ignore)
 
 ;; show function name
 (which-function-mode 1)
@@ -22,11 +23,8 @@
 (setq require-final-newline t)
 (setq next-line-add-newlines nil)
 
-;; Skeleton library
-;(setq skeleton-pair t)
-;(global-set-key "(" 'skeleton-pair-insert-maybe)
-;(global-set-key "[" 'skeleton-pair-insert-maybe)
-;(global-set-key "{" 'skeleton-pair-insert-maybe)
+;; Auto insert parenthesis brackets by pair
+(electric-pair-mode 1)
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-window-plain)
@@ -39,10 +37,6 @@
 ;; flex-autopair
 ;(require 'flex-autopair)
 ;(flex-autopair-mode 1)
-
-;; smartparens
-(require 'smartparens-config)
-(smartparens-global-mode t)
 
 ;; grep
 (require 'grep)

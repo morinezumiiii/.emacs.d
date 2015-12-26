@@ -12,20 +12,29 @@
 (require 'cl)
 (defvar installing-package-list
   '(
+    ac-clang
+    ac-html
+    ac-html-bootstrap
+    ac-php
+    ac-python
     arduino-mode
     auto-complete
+    bind-key
     color-theme
     color-theme-solarized
     color-theme-sanityinc-tomorrow
+    company
     csharp-mode
     darcula-theme
+    dash
+    dos
     eldoc
+    elscreen
+    elscreen-persist
+    flycheck
     flymake
     fuzzy
-    go-mode
     go-autocomplete
-    go-direx
-    go-dlv
     go-eldoc
     go-errcheck
     go-mode
@@ -36,16 +45,25 @@
     google-c-style
     helm
     init-loader
+    jade-mode
     js2-mode
     json-mode
     log4e
     markdown-mode
     multi-web-mode
+    neotree
+    php-mode
+    php-completion
     popup
-    psession
-    smartparens
+    popwin
+    powerline
+    python-mode
+    smart-mode-line
+    sql-indent
+    sqlplus
     tss
-    typescript
+    tide
+    xmlunicode
     yaxception
     ))
 
@@ -60,3 +78,4 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/settings")
+(put 'upcase-region 'disabled nil)

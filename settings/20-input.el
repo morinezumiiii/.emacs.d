@@ -1,0 +1,47 @@
+;;
+;; Key bindings
+;;
+(require 'bind-key)
+(bind-key "C-h" 'delete-backward-char)
+(bind-key "C-{" 'previous-buffer)
+(bind-key "C-}" 'next-buffer)
+(bind-key "C-c :" 'ace-jump-buffer)
+(bind-key "C-c C-l" 'toggle-truncate-lines)
+(bind-key "C-x +" 'follow-delete-other-windows-and-split)
+(bind-key "C-x :" 'anything-for-files)
+(bind-key "C-x a s" 'auto-save-buffers-enhanced-toggle-activity)
+(bind-key "<f8>" 'neotree-toggle)
+(bind-key "M-y" 'anything-show-kill-ring)
+(bind-key "M-z" 'goto-line)
+(bind-key "M-ESC ESC" 'keyboard-quit)
+(bind-key "M-;" 'comment-dwim-2)
+(bind-key "M-h" 'windmove-left)
+(bind-key "M-j" 'windmove-down)
+(bind-key "M-k" 'windmove-up)
+(bind-key "M-l" 'windmove-right)
+(bind-key "M-<left>" 'shrink-window-horizontally)
+(bind-key "M-<down>" 'enlarge-window)
+(bind-key "M-<up>" 'shrink-window)
+(bind-key "M-<right>" 'enlarge-window-horizontally)
+;(bind-key "C-x C-k h") 'helm-mini)
+;(bind-key "C-x C-k r") 'helm-recentf)
+;(bind-key "C-x C-k i") 'helm-imenu)
+;(bind-key "C-x C-k k") 'helm-show-kill-ring)
+;(bind-key "C-h" 'delete-backward-char helm-map)
+;(bind-key "C-h" 'delete-backward-char helm-read-file-map)
+;(bind-key "C-h" 'delete-backward-char helm-find-files-map)
+
+
+;;
+;; Trackpad settings
+;;
+(defun scroll-down-with-lines ()
+  "" (interactive) (scroll-down 3))
+(defun scroll-up-with-lines ()
+  "" (interactive) (scroll-up 3))
+(bind-key [wheel-up] 'scroll-down-with-lines)
+(bind-key [wheel-down] 'scroll-up-with-lines)
+(bind-key [double-wheel-up] 'scroll-down-with-lines)
+(bind-key [double-wheel-down] 'scroll-up-with-lines)
+(bind-key [triple-wheel-up] 'scroll-down-with-lines)
+(bind-key [triple-wheel-down] 'scroll-up-with-lines)
